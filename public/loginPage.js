@@ -17,7 +17,7 @@ userObject.registerFormCallback = function(data) {
         if( callback.success) {
             location.reload();
         } else {
-            userObject.registerErrorMessageBox("ошибка");
+            userObject.setRegisterErrorMessage("ошибка");
         } 
     })
 }
