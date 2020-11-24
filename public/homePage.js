@@ -32,7 +32,7 @@ moneyManager.addMoneyCallback = function(data){
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(true, "Успех! Баланс пополнен.");
         }else {
-            moneyManager.setMessage(false,"Ошибка! Баланс не пополнен.");
+            moneyManager.setMessage(false, callback.error);
         }
     })
 }
@@ -43,7 +43,7 @@ moneyManager.conversionMoneyCallback = function(data){
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(true,"Успех! Конвертация выполнена.");
         }else {
-            moneyManager.setMessage(false,"Ошибка! Конвертация не выолнена.");
+            moneyManager.setMessage(false,callback.error);
         }
     })
 }
@@ -54,7 +54,7 @@ moneyManager.sendMoneyCallback = function(data) {
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(true,"Успех! Перевод выполнен.");
         }else {
-            moneyManager.setMessage(false,"Ошибка! Перевод не пополнен.");
+            moneyManager.setMessage(false,callback.error);
         }
     })
 }
@@ -76,7 +76,7 @@ favoritesWidget.addUserCallback = function(data) {
             moneyManager.updateUsersList(callback.data);
             favoritesWidget.setMessage(true, "Успех! Пользователь добавлен");
         } else {
-            favoritesWidget.setMessage(false, "Ошибка! Пользователь не добавлен");
+            favoritesWidget.setMessage(false, callback.error);
         }
     })
 }
@@ -89,7 +89,7 @@ favoritesWidget.removeUserCallback = function(data) {
             moneyManager.updateUsersList(callback.data);
             favoritesWidget.setMessage(true, "Успех! Пользователь удален");
         } else {
-            favoritesWidget.setMessage(false, "Ошибка! Пользователь не удален");
+            favoritesWidget.setMessage(false, callback.error);
         }
     })
 }
